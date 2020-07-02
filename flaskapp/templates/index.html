@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Notes</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<style type="text/css">
+		h1{
+			color: red;
+		}
+		input[type=text]{
+			border: solid black 2px;
+			border-radius: 10px
+		}
+		
+	</style>
+</head>
+<body>
+<h1> Notes </h1>
+	<ul>
+		{% for note in notes %}
+		<li> {{note}}		</li>
+		{% endfor %}
+	</ul>
+<form action="{{url_for('index')}}" method="post">
+	<input type="text" name="note" placeholder="enter your note">
+    <button class="btn btn-outline-success">submit</button>
+</form>
+</body>
+</html>
